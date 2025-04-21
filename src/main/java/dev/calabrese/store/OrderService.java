@@ -1,6 +1,7 @@
 package dev.calabrese.store;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -8,19 +9,20 @@ import org.springframework.stereotype.Service;
 public class OrderService {
 
 
-    private PaymentService paymentService;
+  private PaymentService paymentService;
 
 
-    public OrderService(PaymentService paymentService) {
-        this.paymentService = paymentService;
-    }
+  public OrderService(@Qualifier("PayPal") PaymentService paymentService) {
+    this.paymentService = paymentService;
+  }
 
-    public void placeOrder(){
+  public void placeOrder() {
 
-        paymentService.processPayment(10);
-    }
-    public void setPaymentService(PaymentService paymentService) {
-        this.paymentService = paymentService;
-    }
+    paymentService.processPayment(10);
+  }
+
+  public void setPaymentService(PaymentService paymentService) {
+    this.paymentService = paymentService;
+  }
 
 }
