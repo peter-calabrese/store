@@ -2,7 +2,7 @@ package dev.calabrese.store;
 
 import org.springframework.stereotype.Service;
 
-@Service("PayPal")
+//@Service("PayPal")
 public class PayPalPaymentService implements PaymentService {
 
   @Override

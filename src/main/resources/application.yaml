@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: store
+stripe:
+  apiUrl: http://api.stripe.com
+  timeout: 1000
+  enable: true
+  supported-currencies: USD,EUR,GBP
+payment:
+  gateway: paypal
